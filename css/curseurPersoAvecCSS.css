@@ -1,0 +1,838 @@
+/* Aspect du curseur au survol de l'image
+==================================================================== */
+*{
+  user-select: none;
+}
+
+ 
+
+
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*----------------------------------------------------------------------------------------  header  ---------------------------------------------------------------------------------------------*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+header::after {
+  content: "";
+  transition: content 2s;
+}
+
+header:hover::after {
+  content: "ya rien ici";
+}
+
+
+
+
+
+
+
+
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*----------------------------------------------------------------------------------------  section  --------------------------------------------------------------------------------------------*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+/*/////////////////////////////////////////////////////////  le curseur dans le body   //////////////////////////////////////////////////////////*/
+
+body.activation-curseur {
+  cursor: url(../images/curseurDeBase.png) 64 64, pointer;
+}
+body.vrai {
+  cursor: url(../images/curseur12.png) 64 64, pointer;
+}
+body.faux {
+  cursor: url(../images/curseur13.png) 64 64, pointer;
+}
+
+body.zeroPoint {
+  cursor: url(../images/curseur3.png) 64 64, pointer;
+}
+
+body.unPoint {
+  cursor: url(../images/curseur1.png) 64 64, pointer;
+}
+
+body.deuxPoint {
+  cursor: url(../images/curseur4.png) 64 64, pointer;
+}
+
+body.troisPoint {
+  cursor: url(../images/curseur4.png) 64 64, pointer;
+}
+
+body.quatrePoint {
+  cursor: url(../images/curseur13.png) 64 64, pointer;
+}
+
+body.cinqPoint {
+  cursor: url(../images/curseur5.png) 64 64, pointer;
+}
+
+
+
+
+/*/////////////////////////////////////////////////////////  le background du quiz  //////////////////////////////////////////////////////////*/
+
+section {
+  background-image: url(../images/leFonDuMenu.png);
+  background-repeat: round;
+  animation: defileBackground 480s infinite linear;
+}
+@keyframes defileBackground {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: 3840px;
+  }
+}
+
+
+
+/*/////////////////////////////////////////////////////////  le contenue du quiz  //////////////////////////////////////////////////////////*/
+
+
+.toutLeQuizz {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  transition: transform 3s;
+  transform: translateX(525vw);
+}
+
+
+/*///////////////////// déplacement 1 ///////////////////*/
+
+.toutLeQuizz.cesParti {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  transition: transform 3s;
+  transform: translateX(375vw);
+}
+
+/*///////////////////// déplacement 2 ///////////////////*/
+
+.toutLeQuizz.prochaineQuestion2 {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  transition: transform 3s;
+  transform: translateX(225vw);
+}
+
+/*///////////////////// déplacement 3 ///////////////////*/
+
+.toutLeQuizz.prochaineQuestion3 {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  transition: transform 3s;
+  transform: translateX(75vw);
+}
+
+/*///////////////////// déplacement 4 ///////////////////*/
+
+.toutLeQuizz.prochaineQuestion4 {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  transition: transform 3s;
+  transform: translateX(-75vw);
+}
+
+/*///////////////////// déplacement 5 ///////////////////*/
+
+.toutLeQuizz.prochaineQuestion5 {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  transition: transform 3s;
+  transform: translateX(-225vw);
+}
+
+/*///////////////////// déplacement 6 ///////////////////*/
+
+.toutLeQuizz.prochaineQuestion6 {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  transition: transform 3s;
+  transform: translateX(-375vw);
+}
+
+
+
+
+/*/////////////////////////////////////////////////////////  le menu  //////////////////////////////////////////////////////////*/
+
+.leMenu {
+  transition: transform 3s;
+  padding-right: 150vw;
+  width: 100vw;
+  height: 100%;
+}
+.leMenu.cesParti {
+  display: flex;
+  flex-direction: row;
+
+  transition: transform 3s;
+}
+
+.bouton-partir {
+  border: solid black 4px;
+  border-radius: 12rem;
+  background-color: aliceblue;
+  width: 25vw;
+  height: 20vh;
+  transition: background-color 3s transform 3s;
+
+  position: relative;
+}
+
+.bouton-partir::after {
+  position: absolute;
+  content: "";
+  width: 110%;
+  height: 110%;
+
+  background-image: none;
+
+  transition: transform 5s;
+}
+
+/*//////////////////////////////////////  faire apparaitre le petit texte  //////////////////////////////////////*/
+
+.bouton-partir:hover::after {
+  transform: scale(10);
+
+  background-image: url(../images/pression.png);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -6;
+}
+
+h1 {
+  font-size: 3vw;
+  color: black;
+}
+
+
+.bouton-partir:hover {
+  background-color: red;
+  transform: scale(110%);
+}
+
+/*/////////////////////////////////////////////////////////  question 1  //////////////////////////////////////////////////////////*/
+
+.premiereQuestion {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 150vw;
+  margin-top: -13vh;
+}
+.lesReponse1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.r11,
+.r21,
+.r31 {
+  margin-top: 7vh;
+  border: solid black 2px;
+  background-color: rgb(125, 95, 133);
+  width: 15vmin;
+  height: 15vmin;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+/*/////////////////////////////////////////////////////////  question 2  //////////////////////////////////////////////////////////*/
+
+
+.deuixiemeQuestion {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  flex-direction: column;
+  transition: transform 3s;
+  justify-content: space-around;
+  padding-right: 150vw;
+  margin-top: -13vh;
+}
+.lesReponse2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: -13vh;
+}
+.r12,
+.r22,
+.r32 {
+  margin-top: 2vh;
+  border: solid black 2px;
+  background-color: rgb(125, 95, 133);
+  width: 25vmin;
+  height: 25vmin;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+/*/////////////////////////////////////////////////////////  question 3  //////////////////////////////////////////////////////////*/
+
+
+
+
+.troisiemeQuestion {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+
+  flex-direction: column;
+  transition: transform 3s;
+  justify-content: space-around;
+  padding-right: 150vw;
+  margin-top: -13vh;
+}
+.lesReponse3 {
+  display: flex;
+  flex-direction: column;
+  margin-top: -15vh;
+}
+.r13,
+.r23,
+.r33 {
+  font-size: 25px;
+  margin-top: 5vh;
+  border: solid black 2px;
+  background-color: rgb(125, 95, 133);
+  width: 30vmin;
+  height: 30vmin;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*/////////////////////////////////////////////////////////  question 4  //////////////////////////////////////////////////////////*/
+
+
+
+
+
+.quatriemeQuestion {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  flex-direction: column;
+  transition: transform 3s;
+  justify-content: space-around;
+  padding-right: 150vw;
+  margin-top: -13vh;
+}
+
+.lesReponse4 {
+  display: flex;
+  flex-direction: column;
+  margin-top: -10vh;
+}
+.r14,
+.r24,
+.r34 {
+  margin-top: 4vh;
+  border: solid black 2px;
+  background-color: rgb(125, 95, 133);
+  width: 15vmin;
+  height: 15vmin;
+  border-radius: 50%;
+}
+.quatriemeQuestion img {
+  margin-top: -25vh;
+  width: 12vmax;
+  height: 12vmax;
+}
+
+
+/*/////////////////////////////////////////////////////////  question 5  //////////////////////////////////////////////////////////*/
+
+.cinquiemeQuestion {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: transform 3s;
+  padding-right: 150vw;
+  margin-top: -13vh;
+}
+
+.lesReponse5 {
+  display: flex;
+  flex-direction: column;
+  margin-top: -20vh;
+}
+.r15,
+.r25,
+.r35 {
+  margin-top: 4vh;
+  border: solid black 2px;
+  background-color: rgb(125, 95, 133);
+  width: 15vmin;
+  height: 15vmin;
+  border-radius: 50%;
+}
+
+
+/*/////////////////////////////////////////////////////////  le résultat  //////////////////////////////////////////////////////////*/
+
+
+
+.laFin {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: transform 3s;
+  padding-right: 150vw;
+}
+
+
+.recommencer {
+  cursor: url(../images/curseur1.png) 64 64, pointer;
+  font-size: smaller;
+  margin-top: 10vh;
+  border: solid black 2px;
+  background-color: rgb(125, 95, 133);
+  width: 15vmin;
+  height: 15vmin;
+  border-radius: 50%;
+  position: relative;
+}
+
+.recommencer::after {
+  content: "";
+  position: absolute;
+  transition: transform 2s;
+}
+
+.recommencer:hover::after {
+  content: "";
+
+  border: purple 1px solid;
+  opacity: 65%;
+  z-index: -3;
+  transform: scale(113);
+  border-radius: 50%;
+}
+
+
+.leContenu {
+  display: flex;
+  flex-direction: column;
+  margin-top: -16vh;
+}
+
+.h7 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: whitesmoke;
+  text-decoration: wavy underline;
+  font-size: larger;
+}
+
+
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*----------------------------------------------------------------------------------------   footer  --------------------------------------------------------------------------------------------*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+a:hover {
+  color: coral;
+}
+
+footer a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*-----------------------------------------------------------------------------   les boutons et le curseur  ------------------------------------------------------------------------------------*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+h2,
+h5 {
+  border: solid black 2px;
+  background-color: rgb(80, 5, 100);
+
+  border-radius: 50%;
+}
+
+
+/*/////////////////////////  curseur bouton 1 question 1 ///////////////////////*/
+
+.r11 {
+  cursor: url(../images/curseur1.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r11.reusis {
+  cursor: url(../images/curseur1.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: greenyellow;
+}
+
+/*/////////////////////////  curseur bouton 2 question 1 ///////////////////////*/
+
+.r21 {
+  cursor: url(../images/curseur6.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r21.pasBon {
+  cursor: url(../images/curseur6.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: red;
+}
+
+/*/////////////////////////  curseur bouton 3 question 1 ///////////////////////*/
+
+.r31 {
+  cursor: url(../images/curseur3.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r31.pasBon {
+  cursor: url(../images/curseur3.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: red;
+}
+
+/*/////////////////////////  curseur bouton 1 / 2 / 3  question 2 ///////////////////////*/
+
+.r12,
+.r22,
+.r32 {
+  cursor: url(../images/curseur4.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r12.pasBon {
+  cursor: url(../images/curseur4.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: red;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r32.pasBon {
+  cursor: url(../images/curseur4.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: red;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r22.reusis {
+  cursor: url(../images/curseur4.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: greenyellow;
+}
+
+/*/////////////////////////  curseur bouton 1 question 3 ///////////////////////*/
+
+.r13 {
+  cursor: url(../images/curseur7.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r13.pasBon {
+  cursor: url(../images/curseur7.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: red;
+}
+
+/*/////////////////////////  curseur bouton 2 question 3 ///////////////////////*/
+
+.r23 {
+  cursor: url(../images/curseur8.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r23.pasBon {
+  cursor: url(../images/curseur8.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: red;
+}
+
+/*/////////////////////////  curseur bouton 3 question 3 ///////////////////////*/
+
+.r33 {
+  cursor: url(../images/curseur1.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r33.reusis {
+  cursor: url(../images/curseur1.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: greenyellow;
+}
+
+/*/////////////////////////  curseur bouton 1 question 4 ///////////////////////*/
+
+.r14 {
+  cursor: url(../images/curseur1.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r14.reusis {
+  cursor: url(../images/curseur1.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: greenyellow;
+}
+
+/*/////////////////////////  curseur bouton 2 question 4 ///////////////////////*/
+
+.r24 {
+  cursor: url(../images/curseur9.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r24.pasBon {
+  cursor: url(../images/curseur9.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: red;
+}
+
+/*/////////////////////////  curseur bouton 3 question 4 ///////////////////////*/
+
+.r34 {
+  cursor: url(../images/curseur6.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r34.pasBon {
+  cursor: url(../images/curseur6.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: red;
+}
+
+/*/////////////////////////  curseur bouton 1 question 5 ///////////////////////*/
+
+.r15 {
+  cursor: url(../images/curseur5.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r15.pasBon {
+  cursor: url(../images/curseur5.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: red;
+}
+
+/*/////////////////////////  curseur bouton 2 question 5 ///////////////////////*/
+
+.r25 {
+  cursor: url(../images/curseur11.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r25.pasBon {
+  cursor: url(../images/curseur11.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: red;
+}
+
+/*/////////////////////////  curseur bouton 3 question 5 ///////////////////////*/
+
+.r35 {
+  cursor: url(../images/curseur10.png) 64 64, pointer;
+}
+/*////////////////////////////////////////////////// quand tu clique dessus ////////////////////////////////////////////////*/
+.r35.reusis {
+  cursor: url(../images/curseur10.png) 64 64, pointer;
+  border: solid black 2px;
+  background-color: greenyellow;
+}
+
+
+/*////////////////// le hover des boutons /////////////////*/
+.r11:hover,
+  .r21:hover,
+  .r31:hover,.r12:hover,
+  .r22:hover,
+  .r32:hover, .r13:hover,
+  .r23:hover,
+  .r33:hover,  .r14:hover,
+  .r24:hover,
+  .r34:hover,.r15:hover,
+  .r25:hover,
+  .r35:hover{
+opacity: 0.5;
+  }  
+
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*------------------------------------------------------------------------------------   les pages adaptatives  ---------------------------------------------------------------------------------*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+/*/////////////////////////////  adaptation pour tablette   /////////////////////////////*/
+
+@media screen and (min-width: 768px) {
+
+/* adaptation de la taille des bouton    */
+
+  .r11,
+  .r21,
+  .r31 {
+    margin-top: 7vh;
+    border: solid black 2px;
+    background-color: rgb(125, 95, 133);
+    width: 35vmin;
+    height: 35vmin;
+    border-radius: 50%;
+  }
+
+  .r12,
+  .r22,
+  .r32 {
+    margin-top: 2vh;
+    border: solid black 2px;
+    background-color: rgb(125, 95, 133);
+    width: 35vmin;
+    height: 35vmin;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .r13,
+  .r23,
+  .r33 {
+    font-size: 25px;
+    margin-top: 5vh;
+    border: solid black 2px;
+    background-color: rgb(125, 95, 133);
+    width: 40vmin;
+    height: 40vmin;
+    border-radius: 50%;
+  }
+
+  .r14,
+  .r24,
+  .r34 {
+    margin-top: 4vh;
+    border: solid black 2px;
+    background-color: rgb(125, 95, 133);
+    width: 35vmin;
+    height: 35vmin;
+    border-radius: 50%;
+  }
+
+  .r15,
+  .r25,
+  .r35 {
+    margin-top: 4vh;
+    border: solid black 2px;
+    background-color: rgb(125, 95, 133);
+    width: 15vmin;
+    height: 15vmin;
+    border-radius: 50%;
+  }
+}
+
+/*/////////////////////////////  adaptation pour écran   /////////////////////////////*/
+
+@media screen and (min-width: 992px) {
+
+/* adaptation de la taille des bouton    */
+
+  .r11,
+  .r21,
+  .r31 {
+    margin-top: 7vh;
+    border: solid black 2px;
+    background-color: rgb(125, 95, 133);
+    width: 35vmin;
+    height: 35vmin;
+    border-radius: 50%;
+  }
+
+  .r12,
+  .r22,
+  .r32 {
+    margin-top: 2vh;
+    border: solid black 2px;
+    background-color: rgb(125, 95, 133);
+    width: 35vmin;
+    height: 35vmin;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .r13,
+  .r23,
+  .r33 {
+    font-size: 55px;
+    margin-top: 5vh;
+    border: solid black 2px;
+    background-color: rgb(125, 95, 133);
+    width: 45vmin;
+    height: 45vmin;
+    border-radius: 50%;
+  }
+
+  .r14,
+  .r24,
+  .r34 {
+    margin-top: 4vh;
+    border: solid black 2px;
+    background-color: rgb(125, 95, 133);
+    width: 35vmin;
+    height: 35vmin;
+    border-radius: 50%;
+  }
+
+  .r15,
+  .r25,
+  .r35 {
+    margin-top: 4vh;
+    border: solid black 2px;
+    background-color: rgb(125, 95, 133);
+    width: 10vmin;
+    height: 10vmin;
+    border-radius: 50%;
+  }
+}
